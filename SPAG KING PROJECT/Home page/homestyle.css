@@ -1,0 +1,252 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: arial;
+	background: #0d0d0d;
+}
+.container{
+	margin: 0;
+	margin-top: 5%;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+.ham{
+	height: 5vh;
+}
+nav{
+	z-index: 2;
+}
+nav button{
+	outline: 0;
+	border: 0;
+	background: transparent;
+	font-size: 1.8rem;
+	color: #ffcc00;
+	cursor: pointer;
+	z-index: 1000;
+}
+ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+li{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+li .logo{
+	height: 7vh;
+	width: 13vw;
+	object-fit: cover;
+	border-radius: 100%;
+}
+li:last-child{
+	border: 0;
+	
+}
+main{
+	justify-self: center;
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 8%;
+}
+main .slider{
+	height: 40vh;
+	width: 90%;
+	justify-self: center;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	border-radius: 20px;
+	display: flex;
+	background: #ffcc00;
+	border-radius: 20px;
+}
+main .slides{
+	height: 100%;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	display: flex;
+	flex-direction: row;
+
+
+}
+main .slides img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	display: flex;
+	flex-direction: row;
+	border-radius: 8px;
+
+}
+section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+}
+section h1{
+	font-size: 1.7rem;
+	color: #ffcc00;
+	font-family: 'Playfair Display';
+	letter-spacing: 2px;
+}
+section h3{
+	color: #ddd;
+	z-index: 1;
+	font-family: 'Playfair Display';
+	margin: 10px 0 10px;
+}
+section strong{
+	color: #ffcc00;
+}
+section button:hover{
+	transform: translateY(-3px);
+	box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
+}
+
+section button{
+	padding: 12px 30px;
+	font-weight: 600;
+	cursor: pointer;
+	z-index: 1;
+	transition: transform 0.2s ease, box-shadow 0.3s;
+	width: 100%;
+	color: black;
+	border: 0;
+	border-radius: 30px;
+	background: linear-gradient(90deg, #d4af37, #ffcc00);
+	margin-top: 6%;
+}
+section button::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 50%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	transform: skewX(-25deg);
+	animation: shine 3s infinite ;
+}
+@keyframes shine {
+	0%{left: -100%;}
+	50%{left: 100%;}
+	100%{left: 100%;}
+}
+
+.sidebar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 70%;
+	max-width: 800px;
+	z-index: 999;
+	background: rgba(15,15, 15, 0.97);
+	backdrop-filter: blur(12px);
+	box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+	display: flex;	
+	transition: 0.4s ease-in-out;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 40px;
+	font-size: 1.6rem;
+	font-weight: 700;
+	display: none;
+	
+}
+.sidebar img{
+	height: 5vh;
+	object-fit: cover;
+}
+.sidebar li:hover{
+	transform: scale(1.3);
+}
+.sidebar button:hover{
+	transform: scale(1.3);
+}
+.sidebar a{
+	text-decoration: none;
+	color: #fff;
+	font-family: 'poppins';
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	transition: 0.3s ease;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	display: inline-block;
+	}
+.sidebar li{
+	width: 100%;
+	list-style: none;
+
+}
+.sidebar ul li a:hover{
+	background: linear-gradient(90deg, #d4af37, #ffcc00);
+	color: #111;
+	font-weight: 600;
+	box-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
+}
+.sidebar ul{
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	list-style: none;
+}
+.sidebar button{
+	border: 0;
+	transition: 0.3s ease;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 1.8rem;
+	color: #ffcc00;
+	background: transparent;
+	cursor: pointer;
+	display: block;
+
+	text-align: left;
+}
+.sidebar .active{
+	background: #ffcc00;
+	width: 100%;
+}section button:hover{
+	transform: scale(1);
+}
+button:hover{
+	transform: scale(1.3);
+}
+
+
+
+
+@media(max-width:768px){
+	section h1{
+	font-size: 1.9rem;
+}
+section h3{
+	font-size: 1.2rem;
+}
+
+section button{
+	padding: 10px 10px;
+	font-size: 1.3em;
+}
+}
